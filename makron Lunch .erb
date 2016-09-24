@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>LUNCHES</h1>
+
+   <% @lunches.each do |lunch| %>
+	<h2><%= link_to lunch.Dish, lunch %></h2>
+	<p><i><%= friendly_date lunch.created_at %></i></p>
+	<p>
+		<%= link_to 'Edit', edit_lunch_path(lunch) %>
+		<%= button_to 'Destroy', lunch, method: :delete, 
+			data: {confirm: 'Are you sure?'} %>
+			
+		</p>
+		<% end %>
+
+<br>
+
+
+<%= link_to 'New Lunch', new_lunch_path %>
+<br>
+<br>
+<%= link_to 'Makron Homepage', makrons_path %>
+<br>
+<%= link_to 'Breakfast Recipes', breakfasts_path %>
+<br>
+<%= link_to 'Dinner Recipes', dinners_path %>
+<br>
+<%= link_to 'Desserts Recipes', desserts_path %>
+<br>
+<%= link_to 'Drink Recipes', drinks_path %>
